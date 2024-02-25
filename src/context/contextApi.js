@@ -14,11 +14,11 @@ export const AppContext = (props) => {
     }, [selectCategories] );
      
     const fetchSelectedCategoryData = (query) => {
-        setLoading(true)
+        setLoading(true) //loader appear when getting data from api
         fetchDataFromApi(`search/?q=${query}`).then(({ contents }) => {
             console.log(contents);
             setSearchResult(contents)
-            setLoading(false);
+            setLoading(false); //loader disappear when got data from api.
         })
 
     }
