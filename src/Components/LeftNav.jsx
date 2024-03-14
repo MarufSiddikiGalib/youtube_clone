@@ -31,7 +31,7 @@ const clickHandler = (name, type) => {
       <div className="flex px-5 flex-col">
        {categories.map((item)=>{
           return (
-            <React.Fragment> {/*  gives error without react fragment we can't use sibling div without parent div or react fragment  */}
+            <React.Fragment key = {item.name}> {/*  gives error without react fragment we can't use sibling div without parent div or react fragment  */}
 
                 <LeftNavMenu
                       text = {item.type ==="home" ? "Home" : item.name}
