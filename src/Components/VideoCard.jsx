@@ -17,12 +17,17 @@ const VideoCard = ({video}) => {
 
           className="h-full w-full object-cover" 
           src={video?.thumbnails?.[0]?.url}
-
-           />
+          />
+          
+          {video?.lengthSeconds && (
+            <VideoLength time={video?.lengthSeconds} />
+        )}
+           
 
       </div>
     </div>
   </Link>
+  
   );
 };
 
