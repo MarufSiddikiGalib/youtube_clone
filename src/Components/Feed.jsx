@@ -14,6 +14,8 @@ const Feed = () => {
          document.getElementById("root").classList.remove("custom-h");
     },[]);
 
+    
+
   return (
     <div className="flex flex-row h-[calc(100%-56px)]">
     <LeftNav />
@@ -23,7 +25,7 @@ const Feed = () => {
             
             {!loading &&
                searchResults && searchResults.map((item) => {
-                    if (item.type !== "video") return false;
+                    if (item.type !== "video") return null;
 
                     return (
                         <VideoCard
