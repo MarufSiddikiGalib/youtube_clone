@@ -9,7 +9,7 @@ const VideoCard = ({video}) => {
 
   if (!video) return null;
 
-  
+  console.log("VideoCard video:", video);
 
   return (
   <Link to = {`/${video?.videoId}`}>

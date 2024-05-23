@@ -5,7 +5,7 @@ export const Context = createContext();
 
 export const AppContext = (props) => {
     const [loading, setLoading] = useState(false); //initial value false
-    const [searchResult, setSearchResult ] = useState(false);
+    const [searchResults, setSearchResults ] = useState([]);
     const [selectCategories, setSelectCategories] = useState("New");
     const [mobileMenu, setMobileMenu] = useState(false);
 
@@ -16,8 +16,8 @@ export const AppContext = (props) => {
     const fetchSelectedCategoryData = (query) => {
         setLoading(true) //loader appear when getting data from api
         fetchDataFromApi(`search/?q=${query}`).then(({ contents }) => {
-            console.log(contents);
-            setSearchResult(contents)
+           // console.log(contents);
+            setSearchResults(contents || [])
             setLoading(false); //loader disappear when got data from api.
         })
 
@@ -28,8 +28,8 @@ export const AppContext = (props) => {
        value={{
         loading, 
         setLoading,
-        searchResult,
-        setSearchResult,
+        searchResults,
+        setSearchResults,
         selectCategories,
         setSelectCategories,
         mobileMenu, 
